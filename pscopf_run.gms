@@ -1,13 +1,22 @@
+
+
+
+
+
+
+
+
 $title pscopf_run
 $ontext
 runs everything
 $offtext
 
 $if not set ingms $set ingms pscopf_data.gms
+
 *$if not set ingms $set ingms pscopf_data_hacked_case14.gms
 *$if not set ingms $set ingms pscopf_data_rts96.gms
 
-$if not set nlp $set nlp knitro
+$if not set nlp $set nlp ipopt
 $if not set solutionname $set solutionname solution
 
 * pv/pq method:
