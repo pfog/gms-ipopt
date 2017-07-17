@@ -590,12 +590,15 @@ ftol_iters 3
 maxtime_real 300
 $offecho
 
+$onecho > ipopt.opt
+$offecho
+
 $onecho > examiner.opt
 examinesolupoint 1
 examinesolvpoint 1
 examinegamspoint 0
 examineinitpoint 0
-subsolver knitro.1
+subsolver ipopt.1
 $offecho
 
 pscopf.optfile=1;
