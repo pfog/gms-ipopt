@@ -587,7 +587,7 @@ opttol 1e-4
 maxcgit 10
 ftol 1e-4
 ftol_iters 3
-maxtime_real 300
+maxtime_real 3600
 $offecho
 
 $onecho > ipopt.opt
