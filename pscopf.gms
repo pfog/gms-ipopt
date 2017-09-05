@@ -591,6 +591,7 @@ maxtime_real 3600
 $offecho
 
 $onecho > ipopt.opt
+max_cpu_time 3600
 $offecho
 
 $onecho > examiner.opt
