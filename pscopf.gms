@@ -578,8 +578,6 @@ jkVoltageMagnitudeMaintenanceViolationDef.scale(j,k)$(not kBase(k) and sum(l$(lk
 
 * solver options
 
-option nlp=examiner;
-
 $onecho > knitro.opt
 feastol 1e-8
 *feastol_abs 1e-2
@@ -590,16 +588,12 @@ ftol_iters 3
 maxtime_real 3600
 $offecho
 
-$onecho > ipopt.opt
-max_cpu_time 3600
-$offecho
-
 $onecho > examiner.opt
 examinesolupoint 1
 examinesolvpoint 1
 examinegamspoint 0
 examineinitpoint 0
-subsolver ipopt.1
+subsolver knitro.1
 $offecho
 
 pscopf.optfile=1;
@@ -692,7 +686,7 @@ modelStatus = pscopf.modelstat;
 solveStatus = pscopf.solvestat;
 $offtext
 
-*$ontext
+$ontext
 $onecho > examiner.op2
 examineGamsPoint 1
 examineInitPoint 0
@@ -702,7 +696,7 @@ $offecho
 option nlp = examiner;
 pscopf.optfile = 2;
 solve pscopf using nlp minimizing obj;
-*$offtext
+$offtext
 
 * compute solution from variable values
 $include pscopf_compute_solution.gms
